@@ -1,10 +1,10 @@
 ---
-emoji: 🤷‍♂️
+emoji: 📖
 title: 새로운 게시물
 date: '2021-03-22 23:00:00'
 author: 에디
-tags: test
-categories: test
+tags: kotlin
+categories: kotlin
 ---
 
 ## 1. 헤더 테스트
