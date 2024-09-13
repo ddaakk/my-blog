@@ -3,7 +3,7 @@ module.exports = {
   description: `에디의 개발일기`,
   language: `ko`, // `ko`, `en` => currently support versions for Korean and English
   siteUrl: `https://www.rnesw.blog`,
-  ogImage: `/og-image.png`, // Path to your in the 'static' folder
+  ogImage: `/og-image.jpg`, // Path to your in the 'static' folder
   comments: {
     utterances: {
       repo: `ddaakk/my-blog`, // `zoomkoding/zoomkoding-gatsby-blog`,
