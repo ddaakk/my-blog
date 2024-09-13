@@ -39,6 +39,7 @@ export const pageQuery = graphql`
         title
         categories
         author
+        emoji
       }
       fields {
         slug
@@ -53,6 +54,7 @@ export const pageQuery = graphql`
         title
         categories
         author
+        emoji
       }
       fields {
         slug
@@ -67,6 +69,7 @@ export const pageQuery = graphql`
         title
         categories
         author
+        emoji
       }
       fields {
         slug
