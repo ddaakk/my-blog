@@ -1,5 +1,6 @@
 import React, { createRef, useEffect, useRef } from 'react';
 import { getValueFromLocalStorage } from '../../utils/localStorage';
+import './style.scss'
 
 const url = 'https://utteranc.es';
 const branch = 'master';
