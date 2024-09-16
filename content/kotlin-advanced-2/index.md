@@ -170,7 +170,70 @@ println(user.age)   // 30
 
 이 코드는 Map을 통해 데이터를 위임받아, 프로퍼티 값을 저장하거나 참조할 수 있습니다.
 
+### 클래스 위임
 
+클래스 위임은 어떤 클래스가 특정 작업을 "직접" 하지 않고, "다른 클래스"에게 그 일을 맡기는 것을 의미해요. 즉, 자신이 할 일을 다른 객체에게 넘겨서 대신 처리하게 만드는 것입니다.
+
+예를 들어, 친구가 숙제를 도와달라고 해서 친구가 하기로 한 부분을 대신 해준다고 생각하면 됩니다. 이처럼, 코틀린에서는 by 키워드를 사용해서 이 작업을 쉽게 할 수 있습니다.
+
+친구가 숙제를 하고 숙제 결과를 저장하는 상황을 가정해 볼게요.
+
+```kotlin
+// 숙제하기 인터페이스 정의
+interface Homework {
+    fun doHomework()
+    val result: String  // 숙제 결과를 저장하는 필드
+}
+
+// FriendA는 숙제를 직접 하고 결과를 저장
+class FriendA : Homework {
+    override fun doHomework() {
+        println("FriendA가 숙제를 하고 있어요")
+    }
+
+    override val result: String = "FriendA의 숙제 완료"
+}
+
+// FriendB는 직접 숙제를 안 하고 FriendA에게 맡김, 그리고 결과를 받음
+class FriendB(homework: Homework) : Homework by homework {
+    fun checkResult() {
+        println("FriendB가 확인한 결과: $result")
+    }
+}
+
+fun main() {
+    val friendA = FriendA()  // FriendA 객체 생성 (숙제를 실제로 할 친구)
+    val friendB = FriendB(friendA)  // FriendB는 FriendA에게 숙제 위임
+
+    friendB.doHomework()  // FriendB가 숙제를 하는 것처럼 보이지만 FriendA가 숙제함
+    friendB.checkResult() // FriendB가 숙제 결과를 확인함
+}
+```
+
+1. **Homework 인터페이스**: `doHomework()` 함수 외에도 `result`라는 **필드**(변수)를 추가했습니다. 이 `result`는 숙제를 완료한 후 그 결과를 저장하는 공간입니다.
+
+2. **FriendA 클래스**: 
+   - `doHomework()` 메서드를 오버라이드하여 실제로 숙제를 하고 있습니다.
+   - `result` 필드는 `"FriendA의 숙제 완료"`라는 값으로 저장되어 있습니다.
+
+3. **FriendB 클래스**: 
+   - `by homework`로 **위임**하여, `FriendA`가 맡은 숙제를 대신 처리합니다.
+   - `FriendB`는 직접 `doHomework()`를 구현하지 않지만, `FriendA`가 대신 일을 하고, `result`도 **위임받은** 데이터를 활용합니다.
+   - `checkResult()`라는 추가 함수에서 `result` 필드의 값을 출력하여 숙제 결과를 확인합니다.
+
+```kotlin
+// 실행 결과:
+FriendA가 숙제를 하고 있어요
+FriendB가 확인한 결과: FriendA의 숙제 완료
+```
+
+**필드를 위임받은 클래스에서 사용하는 방법**
+
+1. **필드도 함께 위임**: `FriendB`는 `FriendA`에게 숙제를 위임하는 것뿐 아니라, `FriendA`의 **필드(result)** 값도 함께 사용하고 있습니다. 즉, `FriendB`는 `FriendA`의 데이터를 가져다 쓸 수 있는 것이죠.
+
+2. **필드와 메서드 동시 사용**: `FriendB`는 `doHomework()` 같은 함수뿐만 아니라, `result`라는 데이터(필드)도 함께 위임받아 사용할 수 있습니다.
+
+이처럼 클래스 위임과 필드를 함께 사용하면 객체 간의 책임을 나누면서도, 데이터를 일관되게 관리할 수 있습니다.
 
 ```toc
 
