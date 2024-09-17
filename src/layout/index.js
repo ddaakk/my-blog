@@ -1,7 +1,5 @@
 import React from 'react';
-import ReactGA from 'react-ga';
 import { useStaticQuery, graphql } from 'gatsby';
-import { createBrowserHistory } from 'history';
 import PageHeader from '../components/page-header';
 import PageFooter from '../components/page-footer';
 import ThemeSwitch from '../components/theme-switch';
