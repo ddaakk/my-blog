@@ -23,14 +23,7 @@ const Layout = ({ children }) => {
       }
     }
   `);
-  const { title, author, ga } = data.site.siteMetadata;
-
-  ReactGA.initialize(ga);
-  const history = createBrowserHistory();
-  history.listen((response) => {
-    ReactGA.set({ page: response.location.pathname });
-    ReactGA.pageview(response.location.pathname);
-  });
+  const { title, author } = data.site.siteMetadata;
 
   return (
     <div className="page-wrapper">
