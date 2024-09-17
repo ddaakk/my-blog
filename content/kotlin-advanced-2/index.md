@@ -303,7 +303,7 @@ println(result) // 출력: [6, 8, 10]
 val sequence = sequenceOf(1, 2, 3, 4, 5)
 val result = sequence
     .map { it * 2 }
-
+```
 
 ```toc
 
