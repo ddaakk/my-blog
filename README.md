@@ -1,1 +1,1 @@
-BLOG
+It's my blog
