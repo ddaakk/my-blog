@@ -16,7 +16,7 @@ export const Title = styled.div<{ fill: 'true' | 'false' }>`
   background-color: ${({ theme, fill }) => (fill === 'true' ? theme.color.black40 : theme.color.white100)};
   color: ${({ theme, fill }) => (fill === 'true' ? theme.color.white100 : theme.color.black40)};
   margin-bottom: 25px;
-  border: 1px solid ${({ theme, fill }) => (fill === 'true' ? theme.color.white100 : theme.color.black40)};
+  // border: 1px solid ${({ theme, fill }) => (fill === 'true' ? theme.color.white100 : theme.color.black40)};
 
   @media ${MOBILE_MEDIA_QUERY} {
     font-size: 17px;

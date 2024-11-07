@@ -2,10 +2,10 @@ export default {
   /**
    * basic Information
    */
-  title: `jeong-min.com`,
-  description: `개발자 단민`,
+  title: `rnesw.blog`,
+  description: `개발자 에디`,
   language: `ko`,
-  siteUrl: `https://jeong-min.com/`,
+  siteUrl: `https://rnesw.blog/`,
   ogImage: `/og-image.png`, // Path to your in the 'static' folder
 
   /**
@@ -13,7 +13,7 @@ export default {
    */
   comments: {
     utterances: {
-      repo: ``, //`danmin20/danmin-gatsby-blog`,
+      repo: `ddaakk/my-blog`, //`danmin20/danmin-gatsby-blog`,
     },
   },
 
@@ -21,22 +21,22 @@ export default {
    * introduce yourself
    */
   author: {
-    name: `이정민`,
-    nickname: `단민`,
-    stack: ['Frontend', 'React', 'Typescript'],
+    name: `강상우`,
+    nickname: `에디`,
+    stack: ['Backend', 'Kotlin', 'Java', 'Spring'],
     bio: {
-      email: `ljm991108@gmail.com`,
+      email: `sangwoo98@gmail.com`,
       residence: 'Seoul, South Korea',
-      bachelorDegree: 'Kyunghee Univ. Computer Engineering (2018.03-2022.02)',
+      bachelorDegree: 'Hannam Univ. Computer Engineering (2016.03-2023.02)',
     },
     social: {
-      github: `https://github.com/danmin20`,
-      linkedIn: `https://www.linkedin.com/in/jeonming-lee/`,
-      resume: `https://www.figma.com/file/dtkCl6G7G5DVe18DN2LWny/%EC%9D%B4%EC%A0%95%EB%AF%BC-%EC%9D%B4%EB%A0%A5%EC%84%9C?node-id=0%3A1`,
+      github: `https://github.com/ddaakk`,
+      linkedIn: `https://www.linkedin.com/in/sangwoo-kang-1b00b6214/`,
+      resume: ``,
     },
     dropdown: {
-      tistory: 'https://danminblog.tistory.com/',
-      velog: 'https://velog.io/@danmin20',
+      tistory: 'https://edd1e.tistory.com/',
+      velog: '',
     },
   },
 
@@ -60,27 +60,11 @@ export default {
   timestamps: [
     {
       category: 'Career',
-      date: '2022.01.04 - NOW',
-      en: 'A Corp.',
-      kr: 'A 회사',
-      info: 'A 팀',
-      link: '',
-    },
-    {
-      category: 'Career',
-      date: '2021.01.04 - 2022.01.04',
-      en: 'B Corp.',
-      kr: 'B 회사',
-      info: 'B 팀',
-      link: '',
-    },
-    {
-      category: 'Activity',
-      date: '2023.07 - NOW',
-      en: 'Community',
-      kr: '커뮤니티',
-      info: 'IT 커뮤니티',
-      link: '',
+      date: '2023.02.13 - 2024.04.31',
+      en: 'Codeblock',
+      kr: '코드블럭',
+      info: '페이태그팀',
+      link: 'https://codeblock.kr',
     },
   ],
 
@@ -91,7 +75,7 @@ export default {
     {
       title: 'Portfolio',
       description: '포트폴리오',
-      techStack: ['React', 'Next.js', 'Typescript'],
+      techStack: ['Spring Boot', 'React', 'Next.js', 'Typescript'],
       thumbnailUrl: '', // Path to your in the 'assets' folder
       links: {
         post: '',

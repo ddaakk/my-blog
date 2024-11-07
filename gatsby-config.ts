@@ -33,7 +33,7 @@ const config: GatsbyConfig = {
     {
       resolve: `gatsby-plugin-gtag`,
       options: {
-        trackingId: `G-XXXXXXXX`,
+        trackingId: `G-F1614LDMY1`,
         head: true,
       },
     },
@@ -87,7 +87,7 @@ const config: GatsbyConfig = {
               }
             `,
             output: '/rss.xml',
-            title: 'jeong-min.com RSS Feed',
+            title: 'rnesw.blog RSS Feed',
             match: '^/blog/',
             link: 'https://feeds.feedburner.com/gatsby/blog',
           },
@@ -104,8 +104,8 @@ const config: GatsbyConfig = {
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
-        host: 'https://jeong-min.com/',
-        sitemap: 'https://jeong-min.com/sitemap.xml',
+        host: 'https://rnesw.blog/',
+        sitemap: 'https://rnesw.blog/sitemap.xml',
         policy: [{ userAgent: '*', allow: '/' }],
       },
     },

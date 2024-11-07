@@ -25,7 +25,7 @@ const MainBanner: React.FC<MainBannerProps> = ({ author }) => {
           <strong>
             <ReactRotatingText items={stack} />
           </strong>
-          <span>를 좋아하는</span>
+          <span>을 좋아하는</span>
           <br />
           개발자{' '}
           <strong>
@@ -63,9 +63,9 @@ const MainBanner: React.FC<MainBannerProps> = ({ author }) => {
         </S.SocialWrapper>
       </S.IntroWrapper>
 
-      <S.BuyMeACoffeeWrapper>
+      {/* <S.BuyMeACoffeeWrapper>
         <BuyMeACoffee />
-      </S.BuyMeACoffeeWrapper>
+      </S.BuyMeACoffeeWrapper> */}
     </S.Wrapper>
   );
 };

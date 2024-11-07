@@ -23,21 +23,21 @@ const Home: React.FC<HomeProps> = ({ location, data }) => {
 
   const recentPosts = posts.slice(0, 3);
 
-  const featuredPosts = featured.map(({ title, category }) => {
-    const filteredPosts = posts.filter((post) => post.categories.find((c) => c === category));
-    return { title, posts: filteredPosts };
-  });
+  // const featuredPosts = featured.map(({ title, category }) => {
+  //   const filteredPosts = posts.filter((post) => post.categories.find((c) => c === category));
+  //   return { title, posts: filteredPosts };
+  // });
 
   return (
     <Layout location={location}>
-      <Seo title='개발자 단민' />
+      <Seo title='개발자 에디' />
       <MainBanner author={author} />
 
       <FeaturedPostColumn title='Recent Posts' posts={recentPosts} fill={false} />
 
-      {featuredPosts.map(({ title, posts }, i) => (
+      {/* {featuredPosts.map(({ title, posts }, i) => (
         <FeaturedPostColumn key={i} title={title} posts={posts} />
-      ))}
+      ))} */}
     </Layout>
   );
 };
