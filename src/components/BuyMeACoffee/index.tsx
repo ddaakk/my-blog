@@ -65,7 +65,7 @@ const BuyMeACoffee: React.FC = () => {
             <S.Modal>
               <S.Title>Buy Me A Coffee ☕️</S.Title>
               <S.Content>
-                {toss.link && (
+                {/* {toss.link && (
                   <S.List>
                     <div>토스 익명송금</div>
                     <a href={toss.link}>toss.me/danmin</a>
@@ -87,7 +87,8 @@ const BuyMeACoffee: React.FC = () => {
                       </div>
                     )}
                   </S.Qr>
-                </S.List>
+                </S.List> */}
+                <div>현재는 받지 않습니다.</div>
               </S.Content>
             </S.Modal>
           </S.ModalBackground>,
