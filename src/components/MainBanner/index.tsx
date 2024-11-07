@@ -33,6 +33,7 @@ const MainBanner: React.FC<MainBannerProps> = ({ author }) => {
           </strong>
           입니다.
         </S.Title>
+        <br></br>
         <Image alt='thumbnail' src='thumbnail.png' />
         <S.SocialWrapper>
           {Object.keys(social).map(

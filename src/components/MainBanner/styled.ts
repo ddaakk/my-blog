@@ -81,6 +81,7 @@ export const IntroWrapper = styled.div`
 
 export const Title = styled.p`
   width: 100%;
+  z-index: 2;
 
   .react-rotating-text-cursor {
     font-size: 50px;

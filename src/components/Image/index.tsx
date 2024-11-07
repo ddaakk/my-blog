@@ -41,7 +41,7 @@ const Image = ({ src, ...rest }: React.ImgHTMLAttributes<HTMLImageElement>) => {
   }: { node: ImageNode } = match;
 
   if (extension === 'svg' || !childImageSharp) {
-    return <img src={publicURL} alt={publicURL} {...rest} />;
+    return <img src={publicURL} alt={publicURL} {...rest} style={{ zIndex: 1 }} />;
   }
 
   return <GatsbyImage image={childImageSharp.gatsbyImageData} alt={publicURL} />;
