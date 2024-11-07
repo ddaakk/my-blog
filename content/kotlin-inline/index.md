@@ -1,7 +1,7 @@
 ---
 emoji: 📖
 title: Kotlin inline 함수
-date: '2021-04-28 15:30:17'
+date: '2024-04-28 15:30:17'
 author: 에디
 tags: kotlin
 categories: kotlin
