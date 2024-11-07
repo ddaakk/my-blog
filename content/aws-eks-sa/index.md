@@ -1,3 +1,11 @@
+---
+emoji: 📖
+title: AWS IAM과 Kubernetes Service Account의 통합
+date: '2024-11-06 15:30:17'
+author: 에디
+categories: kotlin
+---
+
 ## AWS IAM과 Kubernetes Service Account 통합
 
 AWS IAM과 Kubernetes Service Account는 각각 AWS와 Kubernetes에서 권한을 관리하는 기능을 제공한다. 특히 EKS에서는 AWS IAM 역할(Role)을 Kubernetes Service Account와 연결해 AWS 리소스에 안전하게 접근할 수 있도록 설정할 수 있다. 여기서는 IAM과 Kubernetes에서의 역할 개념, 두 시스템 간의 통합(IRSA)을 통해 역할을 어떻게 연결할 수 있는지 정리했다.
