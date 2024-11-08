@@ -3,7 +3,7 @@ emoji: 📖
 title: AWS IAM과 Kubernetes Service Account의 통합
 date: '2024-11-06 16:28:47'
 author: 에디
-categories: kotlin
+categories: aws
 ---
 
 ## AWS IAM과 Kubernetes Service Account 통합
