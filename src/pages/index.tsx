@@ -21,7 +21,7 @@ const Home: React.FC<HomeProps> = ({ location, data }) => {
 
   const { author, featured } = data.site.siteMetadata;
 
-  const recentPosts = posts.slice(0, 3);
+  const recentPosts = posts.slice(0, 7);
 
   // const featuredPosts = featured.map(({ title, category }) => {
   //   const filteredPosts = posts.filter((post) => post.categories.find((c) => c === category));
