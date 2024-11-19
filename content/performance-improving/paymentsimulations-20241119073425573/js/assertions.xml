@@ -1,0 +1,17 @@
+<testsuite name="payment.PaymentSimulations" tests="5" errors="0" failures="5" time="0">
+  <testcase name="Global: 95th percentile of response time is less than 1000.0" status="false" time="0">
+  <failure type="Global: 95th percentile of response time is less than 1000.0">Actual value: 60002.0</failure>
+</testcase>
+<testcase name="Global: 99th percentile of response time is less than 1500.0" status="false" time="0">
+  <failure type="Global: 99th percentile of response time is less than 1500.0">Actual value: 60002.0</failure>
+</testcase>
+<testcase name="Global: max of response time is less than 2500.0" status="false" time="0">
+  <failure type="Global: max of response time is less than 2500.0">Actual value: 60025.0</failure>
+</testcase>
+<testcase name="Global: percentage of successful events is greater than 98.0" status="false" time="0">
+  <failure type="Global: percentage of successful events is greater than 98.0">Actual value: 84.97794117647058</failure>
+</testcase>
+<testcase name="Global: count of failed events is less than 200.0" status="false" time="0">
+  <failure type="Global: count of failed events is less than 200.0">Actual value: 4086.0</failure>
+</testcase>
+</testsuite>
