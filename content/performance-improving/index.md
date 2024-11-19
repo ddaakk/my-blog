@@ -39,12 +39,11 @@ B2B 핀테크 서비스 회사에서 일하고 있는 개발자 에디입니다.
 
 먼저 클라이언트인 결제 서비스의 비즈니스 로직입니다.
 
-
-![payment1](./payment1.png)
+<img src="payment1.png" alt="payment1" width="550" height="400">
 
 결제를 처리하고, 외부 PG에 결제를 요청하는 구조입니다.
 
-![payment2](./payment2.png)
+<img src="payment2.png" alt="payment2" width="550" height="250">
 
 실제 PG사에 연결하는 것처럼 100 ~ 200ms의 랜덤한 딜레이 유발했습니다.
 
@@ -236,7 +235,7 @@ public class PaymentSimulations extends BasePaymentSimulation {
 
 ### 첫 번째 테스트 결과
 
-<img src="report1.png" alt="Report Image" width="400" height="200">
+<img src="report1.png" alt="Report Image" width="500" height="250">
 
 테스트 결과 4000개 가량의 실패가 있으며 시스템이 분당 약 3천개의 요청을 처리할 수 있다는 것과, 
 1초 이내 처리되는 요청이 매우 적고 모든 실패는 60초 타임아웃으로 인한 것이며
@@ -319,7 +318,7 @@ spring:
 
 ### 두 번째 시나리오
 
-<img src="report2.png" alt="Report Image" width="400" height="200">
+<img src="report2.png" alt="Report Image" width="500" height="250">
 
 튜닝 후 테스트 결과 단 한건의 실패도 없고,
 응답 시간도 매우 매우 준수해진 것을 확인할 수 있습니다.
