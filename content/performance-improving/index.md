@@ -3,8 +3,8 @@ emoji: 📖
 title: Gatling으로 시작하는 성능 최적화 여행기
 date: '2024-03-18 17:42:31'
 author: 에디
-tags: redis
-categories: redis
+tags: gatling, java, apm, performance, tuning
+categories: gatling
 ---
 
 안녕하세요!
