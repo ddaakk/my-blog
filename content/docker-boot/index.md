@@ -10,7 +10,23 @@ categories: docker
 # Docker 컨테이너 관리를 위한 Docker Boot 개발기
 
 안녕하세요! 
-이번에 Spring Boot 애플리케이션에서 Docker 컨테이너를 쉽게 관리할 수 있는 'Docker Boot'를 개발하게 된 과정과 경험을 공유하고자 합니다.
+이번에 Spring Boot 애플리케이션에서 Docker 컨테이너를 쉽게 관리할 수 있는 'Docker Boot'를 개발하게 된 과정을 공유하고자 합니다.
+
+```yaml
+docker:
+  host: unix:///var/run/docker.sock
+  tls-verify: false
+  registry-url: https://index.docker.io/v1/1
+  containers:
+    redis:
+      enabled: true
+      container-name: redis-container
+      image-name: redis:latest
+      ports:
+        6379: 6379
+```
+
+단 이 한줄로 레디스를 띄울 수 있다고? 마법이야?!
 
 ## 개발 배경
 
@@ -82,9 +98,8 @@ DockerContainerAutoConfigure가 받아온 Properties 정보들을 통해
 
 그리고 생성된 ContainerManager는 Spring SmartLifeCycle에 의해 자동으로 도커 컨테이너가 뜨도록 구현하였습니다.
 
+*AbstractContainerManager 일부*
 ![code2](./code.png)
-
-전체적인 흐름도는 다음과 같습니다.
 
 #### 설정 클래스 구조
 
