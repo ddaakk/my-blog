@@ -12,13 +12,14 @@ categories: gatling
 B2B 핀테크 서비스 회사에서 일하고 있는 개발자 에디입니다.
 
 최근 팀 내 서비스의 성능 테스트를 진행하면서 겪은 경험과 학습한 내용을 공유드리고자 합니다.
-성능 테스트를 처음 접하면서 배운 점들이 많았는데, 저와 비슷한 고민을 하시는 분들께 도움이 되었으면 좋겠습니다!
+결제 서비스의 주요 병목 구간을 찾고, 트래픽 스파이크 상황에서도 안정성을 확보하기 위해 성능 테스트를 진행했습니다. 
+첫 번째 단계로는 현재 구조에서 처리 가능한 트래픽의 한계를 파악하는 것이 목표였습니다.
 
 ---
 
 ## 성능 테스트의 시작
 
-### 왜 성능 테스트가 필요했나요?
+### Gatling 도입 이유
 
 결제 서비스는 순간적으로 많은 트래픽이 몰리는 시스템입니다. 특히 많은 트래픽이 스파이크성으로 몰리는 상황에서도 안정적인 동시성 처리가 필요합니다. 결제는 돈과 직결되는 만큼, 어떤 상황에서도 안정적인 서비스를 제공하는 것이 매우 중요했습니다.
 
@@ -76,18 +77,13 @@ Java에서 사용할 수 있는 gatling-core-java와 gatling-http-java를 사용
 ```java
 plugins {
     id 'java'
-    id 'org.springframework.boot' version '3.2.11'
-    id 'io.spring.dependency-management' version '1.1.6'
-    id("io.gatling.gradle") version "3.13.1"
+    id("io.gatling.gradle") version "3.13.1" // Gatling Gradle 플러그인 추가
 }
 
 dependencies {
-    ...
-    implementation 'io.gatling:gatling-core-java:3.13.1'
-    implementation 'io.gatling:gatling-http-java:3.13.1'
-    ...
+    implementation 'io.gatling:gatling-core-java:3.13.1' // Java용 Gatling Core
+    implementation 'io.gatling:gatling-http-java:3.13.1' // HTTP 프로토콜 지원
 }
-...
 ```
 
 ### 성능 테스트 전 사전 준비
@@ -140,7 +136,7 @@ launchctl limit
 
 --- 
 
-### 첫 번째 성능 테스트 시나리오
+### 첫 번째 성능 테스트 시뮬레이션
 
 부하테스트는 너무 큰 부하는 거의 모든 요청이 실패하므로 의미가 없다고 생각했습니다. 
 적절한 부하를 선택하여 지속적으로 부하를 늘려나가면서 조정하였습니다.
@@ -234,9 +230,11 @@ public class PaymentSimulations extends BasePaymentSimulation {
 }
 ```
 
-### 첫 번째 테스트 결과
+### 첫 번째 시뮬레이션 결과
 
 ![report1](./report1.png)
+
+첫 번째 테스트에서는 타임아웃 설정이 과도하게 높고, GC로 인한 응답 지연이 주요 원인으로 나타났습니다.
 
 테스트 결과 4000개 가량의 실패가 있으며 시스템이 분당 약 3천개의 요청을 처리할 수 있다는 것과, 
 1초 이내 처리되는 요청이 매우 적고 모든 실패는 60초 타임아웃으로 인한 것이며
@@ -317,12 +315,15 @@ spring:
 
 위와 같이 튜닝해주고 다시 테스트를 진행합니다.
 
-### 두 번째 시나리오
+### 두 번째 시뮬레이션
 
 ![report2](./report2.png)
 
 튜닝 후 테스트 결과 단 한건의 실패도 없고,
 응답 시간도 매우 매우 준수해진 것을 확인할 수 있습니다.
+
+JVM 메모리 조정과 Tomcat 설정 변경을 통해 GC로 인한 지연 시간을 단축하고, 
+대기 스레드와 연결 허용량을 증가시켜 병목을 완화했습니다.
 
 자세한 레포트는 여기서 확인하실 수 있습니다.
 [두 번째 테스트 레포트 보기](/paymentsimulations-20241119081237050/index.html)
