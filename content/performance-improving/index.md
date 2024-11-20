@@ -289,10 +289,10 @@ bootJar {
 server:
   tomcat:
     threads:
-      max: 800                    # 2배 증가: 더 많은 동시 요청 처리
-      min-spare: 100             # 더 많은 대기 스레드 유지
-    max-connections: 20000       # 2배 증가: 더 많은 TCP 연결 허용
-    accept-count: 1000          # 2배 증가: 더 큰 대기열
+      max: 200                    # 더 많은 동시 요청 처리
+      min-spare: 50             # 더 많은 대기 스레드 유지
+    max-connections: 20000       # 더 많은 TCP 연결 허용
+    accept-count: 500          # 더 큰 대기열
     connection-timeout: 3000    # 더 빠른 타임아웃으로 실패 빠르게 감지
     keep-alive-timeout: 10000   # Keep-Alive 시간 감소로 리소스 빠른 해제
 
