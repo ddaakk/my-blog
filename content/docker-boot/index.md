@@ -26,7 +26,7 @@ docker:
         6379: 6379
 ```
 
-단 이 한줄로 레디스를 띄울 수 있다고? 마법이야?!
+이렇게만 하면 스프링 킬 때 도커 컨테이너가 자동으로 켜지고 끌 때 스프링을 끌때 자동으로 꺼진다고?! 마법이쟈나...
 
 ## 개발 배경
 
@@ -148,6 +148,27 @@ public class DockerContainerAutoConfiguration {
 ## 사용 예시
 
 ### 기본 설정
+
+먼저, 라이브러리를 받기 위해 의존성을 추가해줍니다.
+
+Gradle:
+```groovy
+dependencies {
+    implementation 'io.github.ddaakk:docker-container-spring-boot-starter:0.1.0'
+}
+```
+
+Maven:
+```xml
+<dependency>
+    <groupId>io.github.ddaakk</groupId>
+    <artifactId>docker-container-spring-boot-starter</artifactId>
+    <version>0.1.0</version>
+</dependency>
+```
+
+그 후 두 가지 방식 중 하나를 선택해서 사용하시면 됩니다!
+
 ```yaml
 docker:
   containers:
@@ -170,6 +191,10 @@ public class MyService {
     }
 }
 ```
+
+![output1](./output1.png)
+
+![output2](./output2.png)
 
 ## 향후 계획
 
