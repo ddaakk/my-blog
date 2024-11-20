@@ -137,13 +137,19 @@ public class DockerContainerAutoConfiguration {
 ### 개발 중 마주친 문제와 해결
 
 #### 1) 빈 생성 순서 문제
-초기에는 BeanFactoryPostProcessor를 사용했으나, properties가 완전히 초기화되기 전에 실행되는 문제가 있었습니다. 이를 해결하기 위해 ApplicationContextAware와 @PostConstruct를 활용했습니다.
+초기에는 BeanFactoryPostProcessor를 사용했으나, properties가 완전히 초기화되기 전에 실행되는 문제가 있었습니다. 이를 해결하기 위해 @PostConstruct를 활용했습니다.
+
+![problem1](./problem1.png)
 
 #### 2) 스레드 안전성
 여러 스레드에서 컨테이너 상태를 안전하게 관리하기 위해 AtomicBoolean과 AtomicReference를 사용했습니다.
 
+![problem2](./problem2.png)
+
 #### 3) 리소스 정리
 애플리케이션 종료 시 컨테이너가 제대로 정리되지 않는 문제가 있었습니다. SmartLifecycle의 stop() 메서드에서 확실한 정리가 이루어지도록 구현했습니다.
+
+![problem3](./problem3.png)
 
 ## 사용 예시
 
