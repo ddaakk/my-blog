@@ -23,7 +23,9 @@ const Home: React.FC<HomeProps> = ({ location, data }) => {
 
   // const recentPosts = posts.slice(0, 3);
 
-  const fixedPosts = posts.filter((post) => post.title.includes('여행기'));
+  const fixedPosts = posts.filter((post) => {
+    post.title.includes('여행기') || post.title.includes('개발기');
+  });
 
   // const featuredPosts = featured.map(({ title, category }) => {
   //   const filteredPosts = posts.filter((post) => post.categories.find((c) => c === category));

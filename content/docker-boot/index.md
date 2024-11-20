@@ -1,7 +1,7 @@
 ---
 emoji: 📖
 title: Docker 컨테이너 관리를 위한 Docker Boot 개발기
-date: '2024-03-18 17:42:31'
+date: '2024-11-20 13:42:31'
 author: 에디
 tags: spring, boot, docker
 categories: docker
