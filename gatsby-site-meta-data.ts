@@ -6,7 +6,8 @@ export default {
   description: `개발자 에디`,
   language: `ko`,
   siteUrl: `https://rnesw.blog/`,
-  ogImage: `/og-image.png`, // Path to your in the 'static' folder
+  // ogImage: `/og-image.png`, // Path to your in the 'static' folder
+  ogImage: ``,
 
   /**
    * comments setting
