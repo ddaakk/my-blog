@@ -249,7 +249,7 @@ public class PaymentSimulations extends BasePaymentSimulation {
 APM에서는 응답시간이 3초정도 걸리고, 처리량도 비슷하게 나온 것을 알 수 있습니다.
 
 자세한 레포트는 여기서 확인하실 수 있습니다.
-[첫 번째 테스트 레포트 보기](./paymentsimulations-20241119073425573/index.html)
+[첫 번째 테스트 레포트 보기](../../static/paymentsimulations-20241119073425573/index.html)
 
 실제 서버 환경과 동일하게 구성하고 테스트를 진행하던지
 테스트 환경에서 테스트 하던지 해야겠지만
@@ -325,7 +325,7 @@ spring:
 응답 시간도 매우 매우 준수해진 것을 확인할 수 있습니다.
 
 자세한 레포트는 여기서 확인하실 수 있습니다.
-[두 번째 테스트 레포트 보기](./paymentsimulations-20241119081237050/index.html)
+[두 번째 테스트 레포트 보기](../../static/paymentsimulations-20241119081237050/index.html)
 
 ### 결론
 모든 서비스는 제각기 CPU, Memory 사용량이 다르기 때문에 모든 상황을 커버할 수 있는 옵션이란 없습니다.
