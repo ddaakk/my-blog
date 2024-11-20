@@ -21,7 +21,9 @@ const Home: React.FC<HomeProps> = ({ location, data }) => {
 
   const { author, featured } = data.site.siteMetadata;
 
-  const recentPosts = posts.slice(0, 7);
+  // const recentPosts = posts.slice(0, 3);
+
+  const fixedPosts = posts.filter((post) => post.title.includes('여행기'));
 
   // const featuredPosts = featured.map(({ title, category }) => {
   //   const filteredPosts = posts.filter((post) => post.categories.find((c) => c === category));
@@ -33,7 +35,7 @@ const Home: React.FC<HomeProps> = ({ location, data }) => {
       <Seo title='개발자 에디' />
       <MainBanner author={author} />
 
-      <FeaturedPostColumn title='Recent Posts' posts={recentPosts} fill={false} />
+      <FeaturedPostColumn title='Fixed Posts' posts={fixedPosts} fill={false} />
 
       {/* {featuredPosts.map(({ title, posts }, i) => (
         <FeaturedPostColumn key={i} title={title} posts={posts} />

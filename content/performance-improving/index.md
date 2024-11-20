@@ -39,11 +39,12 @@ B2B 핀테크 서비스 회사에서 일하고 있는 개발자 에디입니다.
 
 먼저 클라이언트인 결제 서비스의 비즈니스 로직입니다.
 
-<img src="payment1.png" alt="payment1" width="550" height="400">
+
+![payment1](./payment1.png)
 
 결제를 처리하고, 외부 PG에 결제를 요청하는 구조입니다.
 
-<img src="payment2.png" alt="payment2" width="550" height="250">
+![payment2](./payment2.png)
 
 실제 PG사에 연결하는 것처럼 100 ~ 200ms의 랜덤한 딜레이 유발했습니다.
 
@@ -235,7 +236,7 @@ public class PaymentSimulations extends BasePaymentSimulation {
 
 ### 첫 번째 테스트 결과
 
-<img src="report1.png" alt="Report Image" width="500" height="250">
+![report1](./report1.png)
 
 테스트 결과 4000개 가량의 실패가 있으며 시스템이 분당 약 3천개의 요청을 처리할 수 있다는 것과, 
 1초 이내 처리되는 요청이 매우 적고 모든 실패는 60초 타임아웃으로 인한 것이며
@@ -248,7 +249,7 @@ public class PaymentSimulations extends BasePaymentSimulation {
 APM에서는 응답시간이 3초정도 걸리고, 처리량도 비슷하게 나온 것을 알 수 있습니다.
 
 자세한 레포트는 여기서 확인하실 수 있습니다.
-[첫 번째 테스트 레포트 보기](../../assets/paymentsimulations-20241119073425573/index.html)
+[첫 번째 테스트 레포트 보기](./paymentsimulations-20241119073425573/index.html)
 
 실제 서버 환경과 동일하게 구성하고 테스트를 진행하던지
 테스트 환경에서 테스트 하던지 해야겠지만
@@ -318,19 +319,19 @@ spring:
 
 ### 두 번째 시나리오
 
-<img src="report2.png" alt="Report Image" width="500" height="250">
+![report2](./report2.png)
 
 튜닝 후 테스트 결과 단 한건의 실패도 없고,
 응답 시간도 매우 매우 준수해진 것을 확인할 수 있습니다.
 
 자세한 레포트는 여기서 확인하실 수 있습니다.
-[두 번째 테스트 레포트 보기](../../assets/paymentsimulations-20241119081237050/index.html)
+[두 번째 테스트 레포트 보기](./paymentsimulations-20241119081237050/index.html)
 
 ### 결론
 모든 서비스는 제각기 CPU, Memory 사용량이 다르기 때문에 모든 상황을 커버할 수 있는 옵션이란 없습니다.
 (There is no silver bullet!)
 
-때문에 성능테스트 및 운영중인 서비스 모니터링을하며 좀 더 나은 수치를 찾아가는 것이 중요합니다!
+때문에 성능테스트 및 운영중인 서비스 모니터링을하며 좀 더 나은 수치를 찾아가는 것이 중요합니다!!
 
 
 
