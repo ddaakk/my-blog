@@ -70,6 +70,3 @@ CMD ["jupyter-lab", "--ip=0.0.0.0", "--port=8888", "--no-browser", "--allow-root
 콘솔에 뜬 토큰을 포함한 경로로 접속합니다.
 
 ![image2](./image2.png)
-
-```toc
-```
