@@ -11,13 +11,13 @@ Lombok을 활용해서 빌더를 손쉽게 사용할 수있지만 Lombok을 사�
 
 ## Builder Generator 플러그인 설치
 
-![image1](image1.png)
+![image1](./image1.png)
 
 Settings > Plugins > Marketplace > Builder Generator 설치
 
 ## 빌더 클래스 생성 방법
 
-![image2](image2.png)
+![image2](./image2.png)
 
 - `command + n`을 누를 시 Builder가 새로 추가됨
 

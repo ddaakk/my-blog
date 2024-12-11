@@ -3,8 +3,8 @@ emoji: 📖
 title: Apple Silicon Mac에서 Cling 실행하기
 date: '2024-11-30 09:47:10'
 author: 에디
-tags: java
-categories: java
+tags: cpp
+categories: cpp
 ---
 
 C++ 환경의 주피터 노트북이 필요했는데,
@@ -65,11 +65,11 @@ CMD ["jupyter-lab", "--ip=0.0.0.0", "--port=8888", "--no-browser", "--allow-root
 
 ```$ docker run -it --rm -p 8888:8888 -v $(pwd):/workspace xeus-cling```
 
-![image1](image1.png)
+![image1](./image1.png)
 
 콘솔에 뜬 토큰을 포함한 경로로 접속합니다.
 
-![image2](image2.png)
+![image2](./image2.png)
 
 ```toc
 ```
