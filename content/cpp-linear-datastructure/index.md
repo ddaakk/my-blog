@@ -7,7 +7,7 @@ tags: cpp
 categories: cpp
 ---
 
-```c++
+```cpp
 #include <iostream>
 #include <vector>
 
@@ -128,7 +128,7 @@ cout << v.size() << " " << v.capacity() << endl;
 
 
 
-```c++
+```cpp
 template<typename T>
 class Vector
 {
@@ -199,7 +199,7 @@ private:
 ```
 
 
-```c++
+```cpp
 #include <iostream>
 
 using namespace std;
@@ -319,7 +319,7 @@ cout << v.size() << " " << v.capacity() << endl;
 
 
 
-```c++
+```cpp
 #include <iostream>
 #include <list>
 
@@ -335,7 +335,7 @@ for (int i = 0; i < 10; i++)
 ```
 
 
-```c++
+```cpp
 #include <iostream>
 #include <list>
 
@@ -369,7 +369,7 @@ for (list<int>::iterator it = li.begin(); it != li.end(); ++it)
     0 1 2 3 4 6 7 8 
 
 
-```c++
+```cpp
 template<typename T>
 class Node
 {
@@ -393,7 +393,7 @@ public:
 ```
 
 
-```c++
+```cpp
 template<typename T>
 class Iterator
 {
@@ -453,7 +453,7 @@ public:
 ```
 
 
-```c++
+```cpp
 template<typename T>
 class List
 {
@@ -541,7 +541,7 @@ public:
 ```
 
 
-```c++
+```cpp
 #include <iostream>
 
 using namespace std;
@@ -574,7 +574,7 @@ for (List<int>::iterator it = li.begin(); it != li.end(); ++it)
     0 1 2 3 4 6 7 8 
 
 
-```c++
+```cpp
 #include <iostream>
 #include <vector>
 #include <list>
@@ -604,13 +604,13 @@ int size =  s.size();
 
 
 
-```c++
+```cpp
 #include <vector>
 using namespace std;
 ```
 
 
-```c++
+```cpp
 template<typename T>
 class Stack
 {
@@ -638,7 +638,7 @@ private:
 ```
 
 
-```c++
+```cpp
 #include <iostream>
 #include <vector>
 #include <list>
@@ -668,7 +668,7 @@ int size =  s.size();
 
 
 
-```c++
+```cpp
 #include <iostream>
 #include <queue>
 using namespace std;
@@ -701,7 +701,7 @@ int size = q.size();
 
 
 
-```c++
+```cpp
 #include <iostream>
 #include <vector>
 #include <list>
@@ -710,7 +710,7 @@ using namespace std;
 ```
 
 
-```c++
+```cpp
 #include <iostream>
 #include <vector>
 #include <list>
@@ -719,7 +719,7 @@ using namespace std;
 ```
 
 
-```c++
+```cpp
 template<typename T>
 class ArrayQueue
 {
@@ -773,7 +773,7 @@ private:
 ```
 
 
-```c++
+```cpp
 template<typename T>
 class ListQueue
 {
@@ -801,7 +801,7 @@ private:
 ```
 
 
-```c++
+```cpp
 #include <iostream>
 #include <queue>
 using namespace std;
@@ -834,7 +834,7 @@ int size = q.size();
 
 
 
-```c++
+```cpp
 #include <iostream>
 #include <queue>
 using namespace std;
