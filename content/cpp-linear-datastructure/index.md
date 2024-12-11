@@ -1,6 +1,6 @@
 ---
 emoji: 📖
-title: C++ 선형 자료구조 정리
+title: CPP 선형 자료구조 정리
 date: '2024-12-11 15:49:25'
 author: 에디
 tags: cpp
