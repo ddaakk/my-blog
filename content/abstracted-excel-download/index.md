@@ -104,14 +104,12 @@ private void applyCellStyle(CellStyle cellStyle, Color color) {
 - 다국어 지원 및 일관된 기업 스타일 적용
 
 ### 어노테이션과 리플렉션을 이용하여 간편하게!
+첫 번째 목표는 Column에 getter를 사용해 Cell을 하나씩 만들어줄 필요가 없도록 하는 것입니다. 이 목표를 위해 JAVA에 존재하는 어노테이션과 리플렉션을 활용할 수 있습니다.
 
-이런 요구사항을 단순히 컨트롤러에서 AOP로 처리하려면 코드가 복잡해지고 유지보수가 어려워집니다. 이 글에서는 이러한 모든 요구사항을 충족하는 프로덕션 급 엑셀 다운로드 라이브러리를 설계하고 구현하는 방법을 상세히 살펴보겠습니다.
-
-까지 모두 포함한 '프로덕션 급' 라이브러리 설계를 제시합니다.
+제가 구상한 방법은, JPA에서 DB column을 @Column으로 표시하는 것과 비슷하게 DTO에서 엑셀에 표시하고 싶은 필드를 @ExcelColum 으로 표시하는 방법입니다.
 
 ## 1. 왜 '단순 AOP'만으로는 부족할까?
-
-단일 시트, 소량 데이터에 대해서는 간단한 `@ExcelDocument` 애노테이션 기반 AOP 처리가 충분할 수 있습니다. 하지만 실제 서비스 환경에서는 이보다 훨씬 복잡한 요구사항이 존재합니다:
+단일 시트, 소량 데이터에 대해서는 간단한 `@ExcelDocument` 애노테이션 기반 AOP 처리가 충분할 수 있습니다. 하지만 실제 서비스 환경에서는 이보다 훨씬 복잡한 요구사항이 존재합니다.
 
 - **대용량 데이터**: 100만 건 이상의 데이터를 처리해야 할 때 메모리 사용량 문제
 - **다중 시트**: 보고서마다 여러 개의 시트, 각 시트마다 서로 다른 DTO 매핑 필요
@@ -148,38 +146,6 @@ private void applyCellStyle(CellStyle cellStyle, Color color) {
 - ValueConverter: 특정 필드 값 변환 (예: 코드→텍스트)
 - Validator: DTO 필수값·포맷 검증
 - Formatter: 사용자 정의 포맷 적용 (예: 전화번호, 우편번호)
-
-### 2.4. i18n & Global Config
-- messages_{locale}.properties 파일에서 헤더 텍스트 조회
-- application.yml로 기본 스타일·엔진 타입·템포럴 포맷 지정
-
-## 2. 아키텍처 개요
-
-```
-┌─────────────────────────────────────────────────────┐
-│                   ExcelStarter                      │
-│  (Spring Boot Auto‑Configuration + application.yml) │
-├──────────────┬──────────────┬───────────┬───────────┤
-│    Core      │  Streaming   │  Plugin   │  i18n     │
-│  - Annotation│  Engine      │  - Converter│ Resolver│
-│  - Builder   │ SXSSF 기반   │  - Validator│         │
-│  - Metadata  │              │  - Formatter│         │
-└──────────────┴──────────────┴───────────┴───────────┘
-```
-
-### 2.1. Core 모듈
-- `@ExcelDocument`, `@SheetConfig` 등 애노테이션 정의
-- ExcelBuilder API, AOP 지원
-- DTO 메타데이터 추출·관리
-
-### 2.2. Streaming Engine
-- Apache POI의 `SXSSFWorkbook` 기반으로 메모리에 상위 100행만 유지
-- 대용량(수백만 건) 데이터 안전 처리
-
-### 2.3. Plugin 모듈
-- `ValueConverter`: 특정 필드 값 변환 (예: 코드→텍스트)
-- `Validator`: DTO 필수값·포맷 검증
-- `Formatter`: 사용자 정의 포맷 적용 (예: 전화번호, 우편번호)
 
 ### 2.4. i18n & Global Config
 - messages_{locale}.properties 파일에서 헤더 텍스트 조회
